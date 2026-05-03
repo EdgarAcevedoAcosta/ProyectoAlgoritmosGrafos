@@ -1,0 +1,43 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'22'
+-sourcepath
+'C:/Users/edgar/Documents/NetBeansProjects/ProyectoGrafos/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/edgar/Documents/NetBeansProjects/ProyectoGrafos/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ProyectoGrafos 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ProyectoGrafos 1.0-SNAPSHOT API'
+com.mycompany.proyectografos
+entidades
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\src\main\java = 1777833282038
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\allclasses-index.html = 1777834701139
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\allpackages-index.html = 1777834701147
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\element-list = 1777834700898
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\help-doc.html = 1777834701239
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\index-all.html = 1777834701217
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\index.html = 1777834701107
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\member-search-index.js = 1777834701164
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\module-search-index.js = 1777834701151
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\overview-summary.html = 1777834701229
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\overview-tree.html = 1777834701094
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\package-search-index.js = 1777834701155
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\search.html = 1777834701224
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\tag-search-index.js = 1777834701169
+C:\Users\edgar\Documents\NetBeansProjects\ProyectoGrafos\target\reports\apidocs\type-search-index.js = 1777834701159
