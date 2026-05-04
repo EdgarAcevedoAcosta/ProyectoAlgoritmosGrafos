@@ -14,10 +14,10 @@ public class Arista {
     private int peso;
 
     /**
-     *
-     * @param origen
-     * @param destino
-     * @param peso
+     * Arista en que se Juntan 2 Nodos
+     * @param origen Nodo origen 
+     * @param destino Nodo Destino
+     * @param peso El peso de la arista
      */
     public Arista(Nodo origen, Nodo destino, int peso) {
         this.origen = origen;

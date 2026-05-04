@@ -30,7 +30,7 @@ public class PantallaGrafo extends JPanel{
     private int cAlto;
 
     /**
-     *
+     * panel del grafo para mostrar el grafo
      */
     public PantallaGrafo() {
          setBackground(new java.awt.Color(239, 239, 239));
@@ -44,8 +44,8 @@ public class PantallaGrafo extends JPanel{
     }
     
     /**
-     *
-     * @param gr
+     * selecciona el grado para poder pintarlo
+     * @param gr el grafo seleccinado
      */
     public void setGrafo(Grafo gr){
         this.grafo=gr;
@@ -54,7 +54,7 @@ public class PantallaGrafo extends JPanel{
     }
 
     /**
-     *
+     * para pintar toda los cuadros y la imagen por asi decirlo del grafo y su solucion
      * @param g
      */
     @Override

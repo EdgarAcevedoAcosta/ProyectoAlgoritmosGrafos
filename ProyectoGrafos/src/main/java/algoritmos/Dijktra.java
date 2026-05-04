@@ -19,10 +19,11 @@ import java.util.PriorityQueue;
 public class Dijktra {
     
     /**
-     *
-     * @param gr
-     * @param Inicio
-     * @return
+     * Utiliza los Algoritmos Dijktra, BFS y Ordenamiento Topografico, no sabia si 
+     * hacerlo en separado por eso los hice Juntos
+     * @param gr El grafo que see va a encontrar la ruta mas corta
+     * @param Inicio El Nodo Inicial
+     * @return La distancia total del Nodo Inicial a uno de Salida
      */
     public static Map<Nodo, Integer> encontrarRMCorta(Grafo gr, Nodo Inicio){
         Map<Nodo, Integer> distancias=new HashMap<>();
@@ -51,11 +52,11 @@ public class Dijktra {
     }
     
     /**
-     *
-     * @param inicio
-     * @param fin
-     * @param previo
-     * @return
+     * Regresa al camino Original, enlistando los nodos por los que paso
+     * @param inicio Nodo en que Inicio el Camino
+     * @param fin El Nodo en que Termina el Camino
+     * @param previo El Nodo anterior que esta en el camino por el que tomo
+     * @return Una Lista de el Camino que tomo
      */
     public static List<Nodo> reconstruirCamino(Nodo inicio, Nodo fin, Map<Nodo, Nodo> previo){
         List<Nodo> camino=new ArrayList<>();
@@ -70,9 +71,10 @@ public class Dijktra {
     }
     
     /**
-     *
-     * @param gr
-     * @return
+     * Es oara encontrar una mejor salida para el grafo
+     * @param gr El Grafo seleccionado
+     * @return El Camino del grafo para la mejor salida y entrada, declarando su distancia y 
+     * una lista del camino
      */
     public static CaminoResultado encontrarMejorSalida(Grafo gr){
         Nodo mInicio=null;
@@ -118,11 +120,12 @@ public class Dijktra {
         public final List<Nodo> camino;
 
         /**
-         *
-         * @param inicio
-         * @param salida
-         * @param distancia
-         * @param camino
+         * Contructor para declarar el camino que va a tomar el grafo, En cual inicio, 
+         * Cual es su salida, la distancia que va recorrer y la lista del camino
+         * @param inicio Nodo Inicial
+         * @param salida Nodo de Salida
+         * @param distancia Distancia Total del Camino
+         * @param camino Lista de la Ruta o Camino que a reccorido
          */
         public CaminoResultado(Nodo inicio, Nodo salida, int distancia, List<Nodo> camino) {
             this.inicio = inicio;
@@ -131,9 +134,9 @@ public class Dijktra {
             this.camino = camino;
         }
         
-        /**
-         *
-         * @return
+        /** 
+         * Metodo para ver si el camino seleccionado realmente puede llegar a una salida
+         * @return si existe una salida true, false si es contrario
          */
         public boolean hayCaminoPosible(){
             return distancia!= Integer.MAX_VALUE && camino !=null && !camino.isEmpty();

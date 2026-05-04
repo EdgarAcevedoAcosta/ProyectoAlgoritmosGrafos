@@ -20,10 +20,10 @@ public class Nodo {
     private Point posicion;
 
     /**
-     *
-     * @param idNodo
-     * @param fila
-     * @param columna
+     * Nodo en que se va a crear
+     * @param idNodo nIdentificador
+     * @param fila fila del grafo
+     * @param columna columna del grafo
      */
     public Nodo(int idNodo, int fila, int columna) {
         this.idNodo = idNodo;
@@ -34,8 +34,8 @@ public class Nodo {
     }
 
     /**
-     *
-     * @param arista
+     * Agrega una arista asus adyacentes
+     * @param arista la arista
      */
     public void agregarArista(Arista arista){
         adyacentes.add(arista);

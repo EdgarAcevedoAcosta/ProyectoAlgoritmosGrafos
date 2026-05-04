@@ -22,9 +22,9 @@ public class Grafo {
     private int colmnas;
 
     /**
-     *
-     * @param filas
-     * @param colmnas
+     * Para declarar el grafo cuantas columnas y filas va a tener y se declaran las demas para que sean guiados o no guiados
+     * @param filas numero de filas
+     * @param colmnas numero de columnas
      */
     public Grafo(int filas, int colmnas) {
         this.filas = filas;
@@ -37,8 +37,8 @@ public class Grafo {
     }  
     
     /**
-     *
-     * @param nodo
+     * Agrega un Nodo al grafo
+     * @param nodo Nodo que se va agregar
      */
     public void agregarNodo(Nodo nodo){
         nodos.put(nodo.getIdNodo(), nodo);
@@ -50,8 +50,8 @@ public class Grafo {
     }
     
     /**
-     *
-     * @param a
+     * Agrega una arista a los nodos de origen y entrada
+     * @param a Arista
      */
     public void agregarArista(Arista a){
         aristas.add(a);
@@ -60,10 +60,10 @@ public class Grafo {
     }
     
     /**
-     *
-     * @param fila
-     * @param columna
-     * @return
+     * Obtiene un nodo segun la fila y columna del grafo
+     * @param fila numero de fila
+     * @param columna numero de columna
+     * @return el nodo en el que se refiere
      */
     public Nodo getNodo(int fila, int columna){
         return nodos.get(fila*colmnas+ columna);
