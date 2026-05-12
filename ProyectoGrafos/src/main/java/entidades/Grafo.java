@@ -41,7 +41,17 @@ public class Grafo {
      * @param nodo Nodo que se va agregar
      */
     public void agregarNodo(Nodo nodo){
+//        if(nodo.getIdNodo()==0){
+//            int id = nodo.getFila()*colmnas + nodo.getColumna();
+//            nodos.put(id, nodo);
+//        }else{
+//            nodos.put(nodo.getIdNodo(), nodo);
+//        }
+        if(nodo==null){
+            return;
+        }
         nodos.put(nodo.getIdNodo(), nodo);
+        
         if (nodo.getColumna() == 0){
             entradas.add(nodo);
         }if(nodo.getColumna() == colmnas-1){
@@ -54,6 +64,11 @@ public class Grafo {
      * @param a Arista
      */
     public void agregarArista(Arista a){
+        if(a.getOrigen()==null){
+            return;
+        }if(a.getDestino()==null){
+            return;
+        }
         aristas.add(a);
         a.getOrigen().agregarArista(a);
         a.getDestino().agregarArista(a);   

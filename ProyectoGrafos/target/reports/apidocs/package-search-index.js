@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"algoritmos"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.mycompany.proyectografos"},{"l":"entidades"},{"l":"grafos"},{"l":"presentacion"}];updateSearchResults();

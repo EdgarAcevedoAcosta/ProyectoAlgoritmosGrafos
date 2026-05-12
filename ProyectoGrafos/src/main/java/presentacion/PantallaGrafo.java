@@ -71,11 +71,13 @@ public class PantallaGrafo extends JPanel{
             for(int j = 0; j < grafo.getColmnas(); j++){
                 Rectangle rect=new Rectangle(j*cAncho,i*cAlto,cAncho,cAlto);
                 Nodo nodo=grafo.getNodo(i, j);
-                if(resultado!=null && resultado.camino!=null && resultado.camino.contains(nodo)){
+                if(nodo==null){
+                    gr2.setColor(Color.BLACK);
+                }if(resultado!=null && resultado.camino!=null && resultado.camino.contains(nodo)){
                     gr2.setColor(new Color(144, 238, 144, 100)); 
                 }else if(j == 0 && grafo.getEntradas().contains(nodo)){
                     gr2.setColor(new Color(173, 216, 230, 100)); 
-                }else if(j == grafo.getColmnas() - 1 && grafo.getSalidas().contains(nodo)){
+                }else if(j == grafo.getColmnas()-1 && grafo.getSalidas().contains(nodo)){
                     gr2.setColor(new java.awt.Color(153, 102, 255)); 
                 }else{
                     gr2.setColor(Color.WHITE);
@@ -114,7 +116,7 @@ public class PantallaGrafo extends JPanel{
         for(Nodo nodo:grafo.getNodos().values()){
             Point centro=new Point(nodo.getColumna()*cAncho+cAncho/2,
                     nodo.getFila()*cAlto+cAlto/2);
-
+            
             if(nodo.getColumna() == 0 && grafo.getEntradas().contains(nodo)){
                 gr2.setColor(Color.BLUE);
                 gr2.fillOval(centro.x - radio,centro.y-radio,radio*2,radio*2);
@@ -135,7 +137,9 @@ public class PantallaGrafo extends JPanel{
             gr2.setFont(new Font("Segoe UI Emoji", 0, 14));
             gr2.setColor(new Color(0, 100, 0));
             String info = String.format("Ruta encontrada! Distancia: ", resultado.distancia);
+            String ruta= String.format("Camino:", resultado.camino);
             gr2.drawString(info, 10, 25);
+            gr2.drawString(ruta, 15, 25);
         } else if (resultado != null && !resultado.hayCaminoPosible()) {
             gr2.setFont(new Font("Segoe UI Emoji", 0, 14));
             gr2.setColor(Color.RED);
