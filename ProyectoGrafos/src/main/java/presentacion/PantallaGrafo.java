@@ -47,9 +47,9 @@ public class PantallaGrafo extends JPanel{
      * selecciona el grado para poder pintarlo
      * @param gr el grafo seleccinado
      */
-    public void setGrafo(Grafo gr){
+    public void setGrafo(Grafo gr, Dijktra.CaminoResultado resultado){
         this.grafo=gr;
-        this.resultado =Dijktra.encontrarMejorSalida(gr);
+        resultado =Dijktra.encontrarMejorSalida2(gr);
         repaint();
     }
 

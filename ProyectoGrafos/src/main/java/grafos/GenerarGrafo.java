@@ -228,8 +228,8 @@ public class GenerarGrafo {
         gr.agregarArista(aristaOrig);
         
         // Esta la aagrego por ser no dirigida
-        Arista aristaDestino=new Arista(destino,origen,peso);
-        gr.agregarArista(aristaDestino);
+//        Arista aristaDestino=new Arista(destino,origen,peso);
+//        gr.agregarArista(aristaDestino);
     } 
     
         /**
