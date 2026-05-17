@@ -227,7 +227,7 @@ public class GenerarGrafo {
         Arista aristaOrig=new Arista(origen,destino,peso);
         gr.agregarArista(aristaOrig);
         
-        // Esta la aagrego por ser no dirigida
+//        // Esta la aagrego por ser no dirigida
 //        Arista aristaDestino=new Arista(destino,origen,peso);
 //        gr.agregarArista(aristaDestino);
     } 
@@ -276,59 +276,109 @@ public class GenerarGrafo {
             der-> 3
             */
             if(fila>0 && !visitando[fila-1][columna]){
-                vecinos.add(new int[]{fila-1, columna,0});
+                vecinos.add(new int[]{fila-1, columna});
             }if(fila< filas-1 && !visitando[fila+1][columna]){
-                vecinos.add(new int[]{fila+1, columna,1});
-            }if(columna>0 && !visitando[fila][columna-1]){
-                vecinos.add(new int[]{fila, columna-1,2});
+                vecinos.add(new int[]{fila+1, columna});
+            }if(columna>0 && !visitando[fila][columna]){
+                vecinos.add(new int[]{fila, columna-1});
             }if(columna<columnas-1 && !visitando[fila][columna+1]){
-                vecinos.add(new int[]{fila, columna+1,3});
+                vecinos.add(new int[]{fila, columna+1});
             }
             if(!vecinos.isEmpty()){
                 int[] vecino=vecinos.get(loco.nextInt(vecinos.size()));
                 int nodoFila=vecino[0];
                 int nodoColumna=vecino[1];
-                int dir=vecino[2];              
+//                int dir=vecino[2];              
                 //conexion nodos
                 Nodo nodoActual=grafo.getNodo(fila, columna);
-                Nodo nodoVecino=grafo.getNodo(nodoFila, nodoColumna);
-                int peso= loco.nextInt(100)+1;
-                Arista a=new Arista(nodoActual,nodoVecino,peso);
-                grafo.agregarArista(a);              
-                if(dir==0 || dir==1){
-                    int minFila= Math.min(fila, nodoFila);
-                    conexVertical[minFila][columna]=true;
-                }else{
-                    int minColumna=Math.min(columna, nodoColumna);
-                    conexHorizontal[fila][minColumna]=true;
-                }         
+                Nodo nodoVecino=grafo.getNodo(vecino[0], vecino[1]);
+                
+//                Arista a=new Arista(nodoActual,nodoVecino,peso);
+//                grafo.agregarArista(a);              
+//                if(dir==0 || dir==1){
+//                    int minFila= Math.min(fila, nodoFila);
+//                    conexVertical[minFila][columna]=true;
+//                }else{
+//                    int minColumna=Math.min(columna, nodoColumna);
+//                    conexHorizontal[fila][minColumna]=true;
+//                }     
+                if(nodoActual!=null && nodoVecino!=null){
+                    int peso= loco.nextInt(100)+1;
+                    conectarNodos(grafo, nodoActual, nodoVecino,peso);
+//                    if(dir==0 || dir==1){
+//                        int minFila= Math.min(fila, nodoFila);
+//                        conexVertical[minFila][columna]=true;
+//                    }else{
+//                        int minColumna=Math.min(columna, nodoColumna);
+//                        conexHorizontal[fila][minColumna]=true;
+//                    }
+                }
+                
                 visitando[nodoFila][nodoColumna]=true;
                 pila.push(new int[]{nodoFila, nodoColumna});
             }else{
                 pila.pop();
             }
         } 
-        int otrasConexiones= (filas*columnas)/4;
-        for(int i=0; i<otrasConexiones; i++){
-            int fila= loco.nextInt(filas);
-            int columna= loco.nextInt(columnas);
-            //intentar conectar con un vecino
-            List<int[]> posiblesV=new ArrayList<>();
-            if(columna <columnas-1 && !conexHorizontal[fila][columna]){
-                posiblesV.add(new int[]{fila, columna+1});
-            }if(fila<filas-1 && !conexVertical[fila][columna]){
-                posiblesV.add(new int[]{fila+1,columna});
-            }if(!posiblesV.isEmpty()){
-                int[] vecino=posiblesV.get(loco.nextInt(posiblesV.size()));
-                Nodo nodoActual=grafo.getNodo(fila, columna);
-                Nodo nodoVecino= grafo.getNodo(vecino[0], vecino[1]);
-                int peso=loco.nextInt(100)+1;
-                Arista ar=new Arista(nodoActual, nodoVecino, peso);
-                grafo.agregarArista(ar);
-                if(vecino[1]==columna+1){
-                    conexHorizontal[fila][columna]=true;
-                }else{
-                    conexVertical[fila][columna]=true;
+//        int otrasConexiones= (filas*columnas)/4;
+        for(int i=0; i<filas; i++){
+//            int fila= loco.nextInt(filas);
+//            int columna= loco.nextInt(columnas);
+//            //intentar conectar con un vecino
+//            List<int[]> posiblesV=new ArrayList<>();
+//            if(columna <columnas-1 && !conexHorizontal[fila][columna]){
+//                posiblesV.add(new int[]{fila, columna+1});
+//            }if(fila<filas-1 && !conexVertical[fila][columna]){
+//                posiblesV.add(new int[]{fila+1,columna});
+//            }if(!posiblesV.isEmpty()){
+//                int[] vecino=posiblesV.get(loco.nextInt(posiblesV.size()));
+//                Nodo nodoActual=grafo.getNodo(fila, columna);
+//                Nodo nodoVecino= grafo.getNodo(vecino[0], vecino[1]);
+//                int peso=loco.nextInt(100)+1;
+//                Arista ar=new Arista(nodoActual, nodoVecino, peso);
+//                grafo.agregarArista(ar);
+//                if(vecino[1]==columna+1){
+//                    conexHorizontal[fila][columna]=true;
+//                }else{
+//                    conexVertical[fila][columna]=true;
+//                }
+//            }
+            for(int j=0;j<columnas;j++){
+                Nodo nodoActual=grafo.getNodo(i,j);
+                if(nodoActual==null){
+                    continue;
+                }
+                // Arriba
+                if (i > 0) {
+                    Nodo vecino = grafo.getNodo(i - 1, j);
+                    if (vecino != null) {
+                        int peso = loco.nextInt(100) + 1;
+                        conectarNodos(grafo,nodoActual,vecino,peso);
+                    }
+                }
+                // Abajo
+                if (i < filas - 1) {
+                    Nodo vecino = grafo.getNodo(i + 1, j);
+                    if (vecino != null) {
+                        int peso = loco.nextInt(100) + 1;
+                        conectarNodos(grafo,nodoActual,vecino,peso);
+                    }
+                }
+                // Izquierda
+                if (j > 0) {
+                    Nodo vecino = grafo.getNodo(i, j - 1);
+                    if (vecino != null) {
+                        int peso = loco.nextInt(100) + 1;
+                        conectarNodos(grafo,nodoActual,vecino,peso);
+                    }
+                }
+                // Derecha
+                if (j < columnas - 1) {
+                    Nodo vecino = grafo.getNodo(i, j + 1);
+                    if (vecino != null) {
+                        int peso = loco.nextInt(100) + 1;
+                        conectarNodos(grafo,nodoActual,vecino,peso);
+                    }
                 }
             }
         }

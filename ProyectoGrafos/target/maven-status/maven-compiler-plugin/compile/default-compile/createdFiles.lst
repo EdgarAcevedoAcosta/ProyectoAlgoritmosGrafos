@@ -3,7 +3,6 @@ grafos\GenerarGrafo.class
 algoritmos\Dijktra$CaminoResultado.class
 entidades\Grafo.class
 presentacion\PantallaGrafo.class
-presentacion\panelDiseño.class
 presentacion\PantallaInicio.class
 entidades\Nodo.class
 presentacion\PantallaGrafo$1.class

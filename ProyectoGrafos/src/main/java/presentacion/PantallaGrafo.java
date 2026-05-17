@@ -63,6 +63,7 @@ public class PantallaGrafo extends JPanel{
         Graphics2D gr2= (Graphics2D) g;
         //dibujar celdas
         gr2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        gr2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18));
         if(grafo==null)return;
         cAncho=getWidth()/grafo.getColmnas();
         cAlto=getHeight()/grafo.getFilas();
